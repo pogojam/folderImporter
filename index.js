@@ -36,12 +36,16 @@ const addImports = (file, imports) => {
 
 watchFolders = ()=>CONFIG.folders.map(folder => {
     
-    console.log('starting watcher')
+    const FolderLocation = __basedir+folder.dir
 
-  startChokidar(folder.dir).on("add", () =>
-    fs.readdir(folder.dir, (err, dirArray) => {
+
+
+    console.log('starting watcher',FolderLocation)
+
+  startChokidar(FolderLocation).on("add", () =>
+    fs.readdir(FolderLocation, (err, dirArray) => {
       dirArray.forEach(dirName => {
-        const filePath = folder.dir + "/" + dirName;
+        const filePath = FolderLocation + "/" + dirName;
 
         //  Add Imports
 
