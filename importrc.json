@@ -1,0 +1,10 @@
+{
+  "folders": [
+    {
+      "dir": "./components",
+      "imports": [
+              { "name": "styled-components", "objects": ["styled"] }
+        ]
+    }
+  ]
+}
