@@ -12,7 +12,7 @@ const ImportTemplate = {
   makeNested: (name, objects) =>
     `import ${objects.reduce(
       (sum, val, i) => makeBraces(i) + sum + "," + val
-    )} from '${name}'`
+    )} from '${name}'\n`
 };
 
 const startChokidar = folders =>
