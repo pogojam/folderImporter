@@ -2,7 +2,7 @@ const fs = require("fs");
 const chokidar = require("chokidar");
 const prependFile = require("prepend-file");
 
-const CONFIG = JSON.parse(fs.readFileSync("./importrc.json", "utf-8"));
+const CONFIG = JSON.parse(fs.readFileSync(__basedir+"/importrc.json", "utf-8"));
 
 const ImportTemplate = {
   makeBraces: i => (i === 1 || i === module.variables.length ? "{" : ""),
