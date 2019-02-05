@@ -2,7 +2,7 @@ const fs = require("fs");
 const chokidar = require("chokidar");
 const prependFile = require("prepend-file");
 
-const CONFIG = JSON.parse(fs.readFileSync(__basedir+"/importrc.json", "utf-8"));
+const CONFIG = JSON.parse(fs.readFileSync(__basedir+"/importrc.json", "utf-8",(err)=>err&&console.log("Please make a importrc.json file",err)));
 
 const ImportTemplate = {
   makeBraces: i => (i === 1 || i === module.variables.length ? "{" : ""),
@@ -37,7 +37,6 @@ const addImports = (file, imports) => {
 watchFolders = ()=>CONFIG.folders.map(folder => {
     
     const FolderLocation = __basedir+folder.dir
-
 
 
     console.log('starting watcher',FolderLocation)

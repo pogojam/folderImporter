@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 const path = require('path')
 
-global.__basedir = path.resolve(__dirname)
+global.__basedir = process.cwd()
+
+
 
 const watchFolders = require('./index.js') 
 
