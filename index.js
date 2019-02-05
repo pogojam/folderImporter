@@ -9,10 +9,15 @@ const ImportTemplate = {
 
   makeBasic: name => `import ${name}`,
   makeShallow: module => `import ${module.objects[0]}`,
-  makeNested: (name, objects) =>
-    `import ${objects.reduce(
-      (sum, val, i) => makeBraces(i) + sum + "," + val
-    )} from '${name}'\n`
+  makeNested: (name, included) =>{
+      console.log(included);
+      
+      const includedArray = included.split(' ')
+
+      console.log(includedArray);
+      
+    return`import ${includedArray} from '${name}'\n`
+    }
 };
 
 const startChokidar = folders =>
@@ -48,11 +53,15 @@ watchFolders = ()=>CONFIG.folders.map(folder => {
 
         //  Add Imports
 
-        folder.imports.forEach(({ name, objects }) => {
-          // Check If Existing Import
-          if (!doesHaveImports(filePath, name)) {
-            const ImportedFiles = ImportTemplate.makeNested(name, objects);
+        Object.keys(folder.imports).forEach((importKey,i) => {
 
+
+            const includedFiles = folder.imports[importKey]
+
+          // Check If Existing Import
+          if (!doesHaveImports(filePath, importKey)) {
+            // const ImportedFiles = ImportTemplate.makeNested(name, objects);   Object Styled config
+            const ImportedFiles = ImportTemplate.makeNested(importKey,includedFiles)
             addImports(filePath, ImportedFiles);
           }
         });

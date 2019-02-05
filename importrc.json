@@ -2,10 +2,10 @@
   "folders": [
     {
       "dir": "/components",
-      "imports": [
-              { "name": "styled-components", "objects": ["styled"]},
-              { "name": "reactDOM", "objects": ["styled"] }
-]
+      "imports": {
+             "styled-componetns":"styled",
+             "react":"react {Components,reactDOM}"
+}
     }
   ]
 }
