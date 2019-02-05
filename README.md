@@ -1,9 +1,11 @@
-# folderImporter
+# FolderImporter
 Automatically generate imports for new .js files created in your folders
-## importrc.json
+## Install
+`npm install folderimporter -g`
+## *importrc.json*
 Add this file to your root directory
-## Structure 
-This file imports styled-component's styled object to all js files inside my *./components* dir
+## importrc.json Structure 
+This file imports styled-component's *styled* object to all js files inside my *./components* dir
  ```json
 {
   "folders": [
@@ -17,5 +19,7 @@ This file imports styled-component's styled object to all js files inside my *./
   ]
 }
 ```
-
+## Start
+to start the service open your terminal and type
+`folderWatch`
 
