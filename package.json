@@ -1,6 +1,6 @@
 {
   "name": "folderimporter",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Automatically set imports for files created in select folders",
   "main": "index.js",
   "scripts": {
