@@ -10,11 +10,12 @@ This file imports styled-component's *styled* object to all js files inside my *
 {
   "folders": [
     {
-      "dir": "./components",
-      "imports": [
-              { "name": "styled-components", "objects": ["styled"]},
-              { "name": "react", "objects": ["React"] }
-]
+      "dir": "/components",
+      "imports": {
+             "styled-componetns":"styled",
+             //Add braces for destructured imports
+             "react":"react {Components,reactDOM}"
+}
     }
   ]
 }
