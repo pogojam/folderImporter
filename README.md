@@ -5,7 +5,7 @@ Automatically generate imports for new .js files created in your folders
 ## *importrc.json*
 Add this file to your root directory
 ## importrc.json Structure 
-This file imports styled-component's *styled* object to all js files inside my *./components* dir
+This file imports styled-component's *styled* object to all js files inside your *./components* dir
  ```json
 {
   "folders": [
